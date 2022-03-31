@@ -1,0 +1,198 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+}
+
+:root {
+    font-family: Comfortaa, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    --accent-color: #56b7c6;
+}
+
+body {
+	line-height: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+.image-container {
+    flex: 0.8; /*1 */
+    min-width: 460px; /*460*/
+    background-image: url(/resources/gatis-marcinkevics-a5uptAdUmjE-unsplash.jpg);
+    background-size: cover; /*auto 100%*/
+    background-repeat: no-repeat;
+    background-color: #065a6d;
+    background-position: center; 
+    position: relative;
+    color: white;
+}
+
+.image-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    gap: 5%;
+    top: 18%;
+    height: 12rem;
+    width: 100%;
+    background:rgba(0,0,0,0.3);
+}
+
+.image-overlay>img {
+    flex: none;
+    filter: invert(100%);
+    max-height: 75%;
+}
+
+.image-overlay>div {
+    flex: none;
+    font-family: 'Inspiration';
+    font-size: 5rem;
+    font-weight: 600;
+    opacity: initial;
+}
+
+div.caption {
+    position: absolute;
+    width: 100%;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 1rem; 
+    text-shadow: 0px 0px 5px#000000;
+}
+
+div.caption>a {
+    color: inherit;
+}
+
+.form-container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    flex: 1;
+    height: 100vh;
+    background-color: #FCFCFC;
+    --left-margin: 2.5rem;
+}
+
+.form-container > .above-form {
+    box-sizing:content-box;
+    height: 18%;
+    padding-left: var(--left-margin);
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.form-container > .above-form > p {
+    padding-bottom: 40px;
+    width: clamp(30ch, 60%, 55ch);
+}
+
+em {
+    font-style: italic;
+}
+
+form {
+    padding: 30px 0;
+    font-size: 1.6rem;
+    padding-left: var(--left-margin);
+    background-color: #FFFFFF;
+    box-shadow: 0px 5px 10px #DDD;
+}
+
+.form-header {
+    padding-bottom: 20px;
+}
+
+.inputs-container {
+    display: grid;
+    justify-items: left;
+    max-width: 600px;
+}
+
+.inputs-container > div:nth-child(odd) {
+    grid-column: 1;
+}
+
+.inputs-container > div:nth-child(even) {
+    grid-column: 2;
+}
+
+label {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: #444c58;
+}
+
+input {
+    display: block;
+    border: 1px solid var(--accent-color);
+    border-radius: 3px;
+    box-shadow: none;
+    position: relative;
+}
+
+
+.form-container > .below-form {
+    padding-left: var(--left-margin);
+}
+
+input[type="submit"] {
+    margin: 30px 0;
+    padding: 20px;
+    font: inherit;
+    font-size: 1.6rem;
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 10px;
+}
+
+.below-form a:link,
+.below-form a:visited {
+    color: var(--accent-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+input:focus {
+    outline: #4ca3b1 solid 1px;
+}
+
+input:focus:invalid {
+    border-color: red;
+}
+
+input:focus:valid {
+    border-color: var(--accent-color);
+}
+
+input:valid::after {
+    background-color: aqua;
+    width: 10px;
+    height: 10px;
+    left: 22px;
+}
+
+input:active {
+
+}

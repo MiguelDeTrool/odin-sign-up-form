@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Inspiration&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Odin sign-up form</title>
+</head>
+
+<body>
+    <div class="image-container">
+        <div class="image-overlay">
+            <img src="resources/basiciconset-09-512.png" alt="odin">
+            <div>Make it better!</div>
+        </div>
+        <div class="caption">
+            Photo by <a
+                href="https://unsplash.com/@m_gatus?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Gatis
+                Marcinkevics</a> on <a
+                href="https://unsplash.com/s/photos/ocean?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a>
+        </div>
+    </div>
+    <div class="form-container">
+        <div class="above-form">
+            <p>
+                Make it better. Make them all come true.
+                Make an account, it won't be <em>real</em>.
+            </p>
+            <p>Come on...</p>
+        </div>
+        <form id="sign-up-form" action="https://httpbin.org/get" method="get">
+            <div class="form-header">
+                Let's do this!
+            </div>
+            <div class="inputs-container">
+                <div>
+                    <label for="first-name">First Name</label>
+                    <input id="user-first-name" name="first-name" type="text" minlength="3" title="at least 3 characters" required>
+                </div>
+                <div>
+                    <label for="last-name">Last Name</label>
+                    <input id="user-last-name" name="last-name" type="text" minlength="3" title="at least 3 characters" required>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input id="user-email" name="email" type="email" minlength="7" title="at least 7 characters" required>
+                </div>
+                <div>
+                    <label for="phone">Phone Number</label>
+                    <input id="user-phone" name="phone" type="tel" pattern="\d{9}" required title="9 digit number, no spaces">
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input id="user-password" name="password" type="password"  minlength="8" required>
+                </div>
+                <div>
+                    <label for="password-confirm">Confirm Password</label>
+                    <input id="user-password-confirm" name="password-confirm" type="password" minlength="8" required>
+                </div>
+            </div>
+        </form>
+        <div class="below-form">
+            <input type="submit" form="sign-up-form" value="Create Account" />
+            <p>Already signed up? <a href="">Log in</a></p>
+        </div>
+    </div>
+</body>
+
+</html>
