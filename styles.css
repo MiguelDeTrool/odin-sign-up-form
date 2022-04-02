@@ -18,6 +18,10 @@ time, mark, audio, video {
 	font: inherit;
 }
 
+@font-face { font-family: "Comfortaa"; src: url("/resources/Comfortaa,Inspiration/Comfortaa/static/Comfortaa-Regular.ttf") format("woff2"); font-style: normal; font-weight: 400; font-display: swap; unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: "Inspiration"; src: url("/resources/Comfortaa,Inspiration/Inspiration/Inspiration-Regular.ttf") format("woff2"); font-style: normal; font-weight: 400; font-display: swap; unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
 :root {
     font-family: Comfortaa, Arial, Helvetica, sans-serif;
     font-size: 16px;
@@ -31,9 +35,9 @@ body {
 }
 
 .image-container {
-    flex: 0.8; /*1 */
+    flex: 0.85; /*1 */
     min-width: 460px; /*460*/
-    background-image: url(/resources/gatis-marcinkevics-a5uptAdUmjE-unsplash.jpg);
+    background-image: url(./resources/gatis-marcinkevics-a5uptAdUmjE-unsplash.jpg);
     background-size: cover; /*auto 100%*/
     background-repeat: no-repeat;
     background-color: #065a6d;
@@ -48,20 +52,21 @@ body {
     align-items: center;
     position: absolute;
     gap: 5%;
-    top: 18%;
-    height: 12rem;
+    top: 12%;
+    height: 21.3%;
     width: 100%;
     background:rgba(0,0,0,0.3);
 }
 
 .image-overlay>img {
-    flex: none;
+    flex: 0 1 81px;
     filter: invert(100%);
-    max-height: 75%;
+    max-height: 40%;
 }
 
 .image-overlay>div {
-    flex: none;
+    flex: 0 2;
+    white-space: nowrap;
     font-family: 'Inspiration';
     font-size: 5rem;
     font-weight: 600;
@@ -94,6 +99,7 @@ div.caption>a {
 }
 
 .form-container > .above-form {
+    flex: 1;
     box-sizing:content-box;
     height: 18%;
     padding-left: var(--left-margin);
@@ -105,7 +111,7 @@ div.caption>a {
 
 .form-container > .above-form > p {
     padding-bottom: 40px;
-    width: clamp(30ch, 60%, 55ch);
+    width: clamp(30ch, 80%, 70ch);
 }
 
 em {
@@ -113,7 +119,11 @@ em {
 }
 
 form {
-    padding: 30px 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
     font-size: 1.6rem;
     padding-left: var(--left-margin);
     background-color: #FFFFFF;
@@ -127,7 +137,11 @@ form {
 .inputs-container {
     display: grid;
     justify-items: left;
-    max-width: 600px;
+    max-width: 800px;
+}
+
+.inputs-container > div {
+    width: 100%;
 }
 
 .inputs-container > div:nth-child(odd) {
@@ -140,8 +154,9 @@ form {
 
 label {
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: #444c58;
+    white-space: nowrap;
 }
 
 input {
@@ -150,16 +165,37 @@ input {
     border-radius: 3px;
     box-shadow: none;
     position: relative;
+    width: 70%;
 }
 
+.error {
+    border-color: red;
+}
+
+#password-label {
+    position: relative;
+}
+
+#password-label::after {
+    visibility: visible;
+    text-transform: initial;
+    content: "* Passwords do not match";
+    font-size: 0.7rem;
+    color: red;
+    position: absolute;
+    top: 45px;
+    left: 0px;
+}
 
 .form-container > .below-form {
+    flex: 1;
     padding-left: var(--left-margin);
 }
 
 input[type="submit"] {
+    width: initial;
     margin: 30px 0;
-    padding: 20px;
+    padding: 20px 30px;
     font: inherit;
     font-size: 1.6rem;
     background-color: var(--accent-color);
@@ -176,6 +212,7 @@ input[type="submit"] {
 
 input:focus {
     outline: #4ca3b1 solid 1px;
+    box-shadow: 2px 2px 3px #AAA;
 }
 
 input:focus:invalid {
